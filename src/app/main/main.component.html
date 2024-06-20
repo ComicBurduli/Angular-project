@@ -1,0 +1,74 @@
+
+
+
+
+<div class="filtermethodcheckmethod">
+
+    <label for="nuts">nuts</label>
+    <input type="checkbox" id="nuts" #nutsCheckbox (change)="applyfilter(nutsCheckbox.checked,vegetarianCheckbox.checked)">
+
+<label>vegetarian
+<input  type="checkbox" #vegetarianCheckbox (change)="applyfilter(nutsCheckbox.checked,vegetarianCheckbox.checked)">
+</label>
+
+</div>
+
+
+
+
+<div class="main0main">
+
+    <div class="main-comtainer" *ngFor="let item of data">
+    
+    
+    
+    
+    
+    
+    <img class="card-image" src="{{item.image}}"> 
+    
+    
+    
+    <div class="cards-">
+    
+    
+    <b><h1 class="card-name">{{item.name}}</h1></b>
+    
+    
+    <h3  class="card-spiciness">{{item.spiciness}}</h3>
+    
+    <h3  class="card-nuts">{{item.nuts}}</h3>
+    
+    
+    <h3  class="card-vegetarian">{{item.vegetarian}}</h3>
+    
+    
+    
+    <b><h2  class="card-price">${{item.price}}</h2></b>
+    
+ 
+     <button class="card-button"  (click)="additems(item)">Add To Cart</button>
+
+    <button (click)="deleteItem(item.id)">Delate Item</button>  
+
+
+    <p *ngIf="data.nuts">contain nuts</p>
+    
+    <p *ngIf="data.vegetarian">contain vegetarian</p>
+    
+
+
+
+    
+
+    </div>
+    
+    </div>
+    
+    
+    
+    </div>
+    
+
+    
+    

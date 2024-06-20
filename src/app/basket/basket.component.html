@@ -1,0 +1,17 @@
+ 
+ <div class="main0main">
+  <h2>basket</h2>
+  <div class="main-container" *ngFor="let item of basket">
+      
+
+      <div class="cards">
+        <img class="card-image" [src]="item.image">
+          <b><h1 class="card-name">{{ item.product.name }}</h1></b>
+          <h3 class="card-spiciness">Spiciness: {{ item.product.spiciness }}</h3>
+          <h3 class="card-nuts">Contains nuts: {{ item.product.nuts }}</h3>
+          <h3 class="card-vegetarian">Vegetarian: {{ item.product.vegetarian }}</h3>
+          <b><h2 class="card-price">Price: ${{ item.product.price }}</h2></b>
+          <button (click)="deleteItem(item.id)">Delete Item</button>
+      </div>
+  </div>
+</div>
